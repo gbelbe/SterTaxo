@@ -416,14 +416,6 @@ wv:HullType a skos:Concept ;
     skos:prefLabel "Hull Type"@en,
         "Type de Coque"@fr .
 
-wv:Monohull a skos:Concept ;
-    skos:broader wv:HullType ;
-    skos:inScheme wv:WindVaneTaxonomy ;
-    skos:narrower wv:Centerboarder,
-        wv:FixedKeelBoat ;
-    skos:prefLabel "monohull"@en,
-        "monocoque"@fr .
-
 wv:MountingPosition a skos:Concept ;
     skos:broader wv:TransomCharacteristic ;
     skos:definition "The available position(s) on or near the transom for attaching the wind-vane system frame or blade."@en,
@@ -486,16 +478,14 @@ wv:VerticalAxisVane a skos:Concept ;
     skos:related wv:AuxiliaryRudderWithTrimTab,
         wv:TrimTabOnMainRudder .
 
-wv:BackstayPresence a skos:Concept ;
-    skos:broader wv:RiggingConstraint ;
-    skos:definition "A permanent backstay running from the masthead to the stern may obstruct or limit the height of the wind vane. Its configuration significantly affects vane design choices."@en,
-        "Un pataras permanent allant de la tête de mât à la poupe peut obstruer ou limiter la hauteur de la girouette. Sa configuration influence significativement les choix de conception."@fr ;
+wv:Monohull a skos:Concept ;
+    skos:broader wv:HullType ;
     skos:inScheme wv:WindVaneTaxonomy ;
-    skos:narrower wv:NoBackstay,
-        wv:SingleBackstay,
-        wv:SplitBackstay ;
-    skos:prefLabel "Backstay"@en,
-        "Pataras"@fr .
+    skos:narrower wv:BackstayPresence,
+        wv:Centerboarder,
+        wv:FixedKeelBoat ;
+    skos:prefLabel "monohull"@en,
+        "monocoque"@fr .
 
 wv:MultiHull a skos:Concept ;
     skos:broader wv:HullType ;
@@ -609,6 +599,18 @@ wv:VaneType a skos:Concept ;
     skos:prefLabel "Vane Type"@en,
         "Type de Girouette"@fr ;
     skos:topConceptOf wv:WindVaneTaxonomy .
+
+wv:BackstayPresence a skos:Concept ;
+    skos:broader wv:Monohull,
+        wv:RiggingConstraint ;
+    skos:definition "A permanent backstay running from the masthead to the stern may obstruct or limit the height of the wind vane. Its configuration significantly affects vane design choices."@en,
+        "Un pataras permanent allant de la tête de mât à la poupe peut obstruer ou limiter la hauteur de la girouette. Sa configuration influence significativement les choix de conception."@fr ;
+    skos:inScheme wv:WindVaneTaxonomy ;
+    skos:narrower wv:NoBackstay,
+        wv:SingleBackstay,
+        wv:SplitBackstay ;
+    skos:prefLabel "Backstay"@en,
+        "Pataras"@fr .
 
 wv:TransomShape a skos:Concept ;
     skos:broader wv:TransomCharacteristic ;
