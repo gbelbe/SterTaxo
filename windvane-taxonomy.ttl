@@ -52,7 +52,7 @@ wv:CenterMounting a skos:Concept ;
 wv:Centerboarder a skos:Concept ;
     skos:altLabel "Centreboard boat"@en,
         "Dériveur lesté"@fr ;
-    skos:broader wv:HullType ;
+    skos:broader wv:Monohull ;
     skos:definition "A boat with a centreboard or daggerboard. The wind-vane system (especially the vane-rudder) must be designed to be easily liftable or removable to allow the board to be raised in shallow water."@en,
         "Bateau à dérive centrale ou à daggerboard. Le système d'auto-gouverne (en particulier le safran-girouette) doit être conçu pour pouvoir être relevé ou retiré facilement afin de permettre de remonter la dérive par faible fond."@fr ;
     skos:inScheme wv:WindVaneTaxonomy ;
@@ -86,7 +86,7 @@ wv:DeckLevelTiller a skos:Concept ;
         "Barre Franche Ras du Pont"@fr .
 
 wv:FixedKeelBoat a skos:Concept ;
-    skos:broader wv:HullType ;
+    skos:broader wv:Monohull ;
     skos:inScheme wv:WindVaneTaxonomy ;
     skos:prefLabel "Fixed-Keel Boat"@en,
         "Voilier à Quille Fixe"@fr .
@@ -325,6 +325,12 @@ wv:catamaran a skos:Concept ;
     skos:inScheme wv:WindVaneTaxonomy ;
     skos:prefLabel "catamaran"@en .
 
+wv:proa a skos:Concept ;
+    skos:broader wv:MultiHull ;
+    skos:inScheme wv:WindVaneTaxonomy ;
+    skos:prefLabel "proa"@en,
+        "prao"@fr .
+
 wv:trimaran a skos:Concept ;
     skos:broader wv:MultiHull ;
     skos:inScheme wv:WindVaneTaxonomy ;
@@ -402,6 +408,22 @@ wv:CockpitLayout a skos:Concept ;
     skos:prefLabel "Cockpit Layout"@en,
         "Disposition du Cockpit"@fr .
 
+wv:HullType a skos:Concept ;
+    skos:broader wv:BoatCharacteristic ;
+    skos:inScheme wv:WindVaneTaxonomy ;
+    skos:narrower wv:Monohull,
+        wv:MultiHull ;
+    skos:prefLabel "Hull Type"@en,
+        "Type de Coque"@fr .
+
+wv:Monohull a skos:Concept ;
+    skos:broader wv:HullType ;
+    skos:inScheme wv:WindVaneTaxonomy ;
+    skos:narrower wv:Centerboarder,
+        wv:FixedKeelBoat ;
+    skos:prefLabel "monohull"@en,
+        "monocoque"@fr .
+
 wv:MountingPosition a skos:Concept ;
     skos:broader wv:TransomCharacteristic ;
     skos:definition "The available position(s) on or near the transom for attaching the wind-vane system frame or blade."@en,
@@ -411,14 +433,6 @@ wv:MountingPosition a skos:Concept ;
         wv:SideMounting ;
     skos:prefLabel "Mounting Position"@en,
         "Position de Montage"@fr .
-
-wv:MultiHull a skos:Concept ;
-    skos:broader wv:HullType ;
-    skos:inScheme wv:WindVaneTaxonomy ;
-    skos:narrower wv:catamaran,
-        wv:trimaran ;
-    skos:prefLabel "Multihull"@en,
-        "Multicoques"@fr .
 
 wv:RiggingConstraint a skos:Concept ;
     skos:broader wv:BoatCharacteristic ;
@@ -483,14 +497,14 @@ wv:BackstayPresence a skos:Concept ;
     skos:prefLabel "Backstay"@en,
         "Pataras"@fr .
 
-wv:HullType a skos:Concept ;
-    skos:broader wv:BoatCharacteristic ;
+wv:MultiHull a skos:Concept ;
+    skos:broader wv:HullType ;
     skos:inScheme wv:WindVaneTaxonomy ;
-    skos:narrower wv:Centerboarder,
-        wv:FixedKeelBoat,
-        wv:MultiHull ;
-    skos:prefLabel "Hull Type"@en,
-        "Type de Coque"@fr .
+    skos:narrower wv:catamaran,
+        wv:proa,
+        wv:trimaran ;
+    skos:prefLabel "Multihull"@en,
+        "Multicoques"@fr .
 
 wv:OarVaneRudder a skos:Concept ;
     skos:altLabel "Pendulum oar"@en,
