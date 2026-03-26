@@ -1,0 +1,25 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<boat-arch/test2> a skos:Concept ;
+    skos:broader <boat-arch/test> ;
+    skos:inScheme <file:///Users/20002797/Documents/Claude/vane_taxonomy/boat-arch/scheme> ;
+    skos:prefLabel "test2"@en .
+
+<boat-arch/test> a skos:Concept ;
+    skos:inScheme <file:///Users/20002797/Documents/Claude/vane_taxonomy/boat-arch/scheme> ;
+    skos:narrower <boat-arch/test2> ;
+    skos:prefLabel "test"@en ;
+    skos:topConceptOf <file:///Users/20002797/Documents/Claude/vane_taxonomy/boat-arch/scheme> .
+
+<file:///Users/20002797/Documents/Claude/vane_taxonomy/boat-arch/scheme> a skos:ConceptScheme ;
+    dcterms:created "2026-03-26"^^xsd:date ;
+    dcterms:description "all equipment and architecture of boats"@en ;
+    dcterms:language "en",
+        "fr" ;
+    dcterms:title "boat_equipment"@en ;
+    void:uriSpace "boat-arch/" ;
+    skos:hasTopConcept <boat-arch/test> .
+
