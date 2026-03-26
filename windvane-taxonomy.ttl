@@ -325,6 +325,11 @@ wv:catamaran a skos:Concept ;
     skos:inScheme wv:WindVaneTaxonomy ;
     skos:prefLabel "catamaran"@en .
 
+wv:trimaran a skos:Concept ;
+    skos:broader wv:MultiHull ;
+    skos:inScheme wv:WindVaneTaxonomy ;
+    skos:prefLabel "trimaran"@en .
+
 wv:AttachedToRudder a skos:Concept ;
     skos:altLabel "Add-on auxiliary rudder"@en,
         "Safran auxiliaire rapporté"@fr ;
@@ -357,13 +362,6 @@ wv:IntegratedTrimTab a skos:Concept ;
     skos:prefLabel "Integrated Trim Tab (Part of Rudder)"@en,
         "Tab Intégré (Partie du Safran)"@fr ;
     skos:related wv:TrimTabOnMainRudder .
-
-wv:MultiHull a skos:Concept ;
-    skos:broader wv:HullType ;
-    skos:inScheme wv:WindVaneTaxonomy ;
-    skos:narrower wv:catamaran ;
-    skos:prefLabel "Multihull"@en,
-        "Multicoques"@fr .
 
 wv:TrimTabServoPendulum a skos:Concept ;
     skos:altLabel "Mixed servo-pendulum"@en,
@@ -413,6 +411,14 @@ wv:MountingPosition a skos:Concept ;
         wv:SideMounting ;
     skos:prefLabel "Mounting Position"@en,
         "Position de Montage"@fr .
+
+wv:MultiHull a skos:Concept ;
+    skos:broader wv:HullType ;
+    skos:inScheme wv:WindVaneTaxonomy ;
+    skos:narrower wv:catamaran,
+        wv:trimaran ;
+    skos:prefLabel "Multihull"@en,
+        "Multicoques"@fr .
 
 wv:RiggingConstraint a skos:Concept ;
     skos:broader wv:BoatCharacteristic ;
