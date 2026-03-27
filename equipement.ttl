@@ -8,5 +8,6 @@ wv:scheme a skos:ConceptScheme ;
     dcterms:created "2026-03-27"^^xsd:date ;
     dcterms:language "fr" ;
     dcterms:title "equipement des voiliers"@fr ;
-    void:uriSpace "https://example.org/equipement/" .
+    void:uriSpace "https://example.org/equipement/" ;
+    skos:hasTopConcept wv:test .
 
