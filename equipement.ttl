@@ -4,10 +4,18 @@
 @prefix wv: <https://example.org/equipement/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+wv:test22 a skos:Concept ;
+    skos:inScheme wv:scheme ;
+    skos:prefLabel "test22"@en ;
+    skos:topConceptOf wv:scheme .
+
 wv:scheme a skos:ConceptScheme ;
     dcterms:created "2026-03-27"^^xsd:date ;
     dcterms:language "fr" ;
     dcterms:title "equipement des voiliers"@fr ;
     void:uriSpace "https://example.org/equipement/" ;
-    skos:hasTopConcept wv:test .
+    skos:hasTopConcept wv:test,
+        wv:test-equipement,
+        wv:test22,
+        wv:test_equipement .
 
