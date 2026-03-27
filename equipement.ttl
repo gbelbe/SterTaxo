@@ -1,0 +1,12 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix wv: <https://example.org/equipement/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+wv:scheme a skos:ConceptScheme ;
+    dcterms:created "2026-03-27"^^xsd:date ;
+    dcterms:language "fr" ;
+    dcterms:title "equipement des voiliers"@fr ;
+    void:uriSpace "https://example.org/equipement/" .
+
